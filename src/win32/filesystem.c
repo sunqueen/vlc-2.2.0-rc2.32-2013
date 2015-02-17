@@ -143,7 +143,6 @@ DIR *vlc_opendir (const char *dirname)
         free(wpath);
         return NULL;
     }
-    memset(p_dir, '\0', sizeof(*p_dir));			// sunqueen add
 
 #if !VLC_WINSTORE_APP
     /* Special mode to list drive letters */
@@ -175,7 +174,7 @@ char *vlc_readdir (DIR *dir)
 {
     vlc_DIR *p_dir = (vlc_DIR *)dir;
 
-//	free(p_dir->entry);			// sunqueen delete
+	free(p_dir->entry);
 
 #if !VLC_WINSTORE_APP
     /* Drive letters mode */

@@ -380,7 +380,6 @@ char **subtitles_Detect( input_thread_t *p_this, char *psz_path,
 					free(tmp_fname_ext);
 					free(psz_path);
 					// sunqueen add end
-                    free( psz_name );
                     continue;
                 }
 
@@ -406,7 +405,6 @@ char **subtitles_Detect( input_thread_t *p_this, char *psz_path,
 			free(tmp_fname_trim);
 			free(tmp_fname_ext);
 			// sunqueen add end
-            free( psz_name );
 		}
         closedir( dir );
     }
